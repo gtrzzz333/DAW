@@ -1,0 +1,150 @@
+/* paleta de colores utilizaada */
+:root {
+    --pink-pig: #F2A7B9;
+    --pink-light: #FCE8EE;      
+    --gulf-blue: #7BB5DC;       
+    --gulf-blue-soft: #A9CFE8;  
+    --cream: #F9F9F9;
+    --gulf-orange: #FF7403;
+}
+
+/* ===== ESTILO GENERAL ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    background-color: var(--pink-light); /* Fondo suave */
+    color: var(--gulf-blue);             /* Texto principal */
+}
+
+/* ===== NAVBAR CON DEGRADADO SUAVE ===== */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+
+    background: linear-gradient(
+        90deg,
+        var(--gulf-blue) 0%,
+        #A9CFE8 40%,
+        var(--pink-pig) 100%
+    );
+}
+
+/* Enlaces nav */
+nav a {
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Botón Inicio */
+.inicio {
+    background-color: var(--cream);
+    color: var(--gulf-blue);
+    padding: 10px 25px;
+    border-radius: 30px;
+}
+
+/* Botón Carrusel */
+.carrusel-btn {
+    background-color: var(--gulf-blue);
+    color: var(--cream);
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-weight: bold;
+}
+
+.carrusel-btn:hover {
+    background-color: var(--pink-pig);
+    color: var(--gulf-blue);
+}
+
+/* ===== TÍTULO ===== */
+.titulo-pagina {
+    text-align: center;
+    font-size: 32px;
+    margin: 50px 0;
+    color: var(--gulf-blue);
+}
+
+/* ===== CARRUSEL ===== */
+.carousel {
+    width: 80%;
+    max-width: 900px;
+    height: 420px;
+    margin: auto;
+
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+
+    list-style: none;
+    padding: 0;
+
+    scroll-marker-group: after;
+}
+
+.carousel li {
+    position: relative;
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+}
+
+.carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 18px;
+    border: 3px solid var(--gulf-blue);
+}
+
+/* ===== FLECHAS ===== */
+.nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--gulf-blue);
+    color: var(--cream);
+    font-size: 36px;
+    padding: 8px 18px;
+    border-radius: 50%;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav:hover {
+    background-color: var(--pink-pig);
+    color: var(--gulf-blue);
+}
+
+.prev { left: 15px; }
+.next { right: 15px; }
+
+
+.carousel > li::scroll-marker {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background: var(--pink-pig);
+    border-radius: 50%;
+    margin: 6px;
+}
+
+.carousel > li::scroll-marker:target-current {
+    background: var(--gulf-blue);
+}
+
+
+.carousel img:hover {
+    box-shadow: 0 0 0 2px var(--gulf-orange);
+}
+
+/* Ocultar scrollbar */
+.carousel::-webkit-scrollbar { display: none; }
+.carousel { scrollbar-width: none; }

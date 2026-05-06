@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="author" content="Iván Gutiérrez Mateos">
+<meta name="description" content="Carrusel de coches de Le Mans">
+<title>Carrusel Le Mans Iván Gutiérrez Mateos</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background-color:#c8e6c9;
+    text-align:center;
+    transition:background-color 0.8s ease-in-out;
+}
+
+/* BOTONERA estilo Gulf */
+
+.barra{
+    width:100%;
+    display:flex;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:10;
+    box-shadow:0 4px 10px rgba(0,0,0,0.15);
+}
+
+.boton{
+    flex:1;
+    padding:20px;
+    background-color:#ff7f11;
+    text-decoration:none;
+    color:black;
+    font-weight:bold;
+    border:1px solid #e65100;
+}
+
+.boton:hover{
+    background-color:#ff9e40;
+}
+
+.carrusel{
+    position:relative;
+    width:600px;
+    height:400px;
+    margin:140px auto 40px auto;
+}
+
+.slide{
+    position:absolute;
+    width:100%;
+    height:100%;
+    opacity:0;
+    z-index:0;
+}
+
+.slide img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border:4px solid #ff7f11;
+    border-radius:10px;
+}
+
+/* Primera visible por defecto */
+
+#slide1{
+    opacity:1;
+    z-index:1;
+}
+
+/* Cuando se selecciona */
+
+.slide:target{
+    opacity:1;
+    z-index:2;
+}
+
+/* Cambios de color */
+
+body:has(#slide1:target){background:#6ec1e4;}
+body:has(#slide2:target){background:#ff7f11;}
+body:has(#slide3:target){background:#6ec1e4;}
+body:has(#slide4:target){background:#ff7f11;}
+body:has(#slide5:target){background:#6ec1e4;}
+body:has(#slide6:target){background:#ff7f11;}
+body:has(#slide7:target){background:#6ec1e4;}
+body:has(#slide8:target){background:#ff7f11;}
+body:has(#slide9:target){background:#6ec1e4;}
+body:has(#slide10:target){background:#ff7f11;}
+
+</style>
+</head>
+
+<body>
+
+<div class="carrusel">
+
+<!-- SLIDE 1 -->
+<div class="slide" id="slide1">
+<div class="barra">
+<a href="#slide1" class="boton">Primera</a>
+<a href="#slide1" class="boton">Anterior</a>
+<a href="#slide2" class="boton">Siguiente</a>
+<a href="#slide10" class="boton">Última</a>
+</div>
+<img src="https://cdn.mos.cms.futurecdn.net/TmDxXkq4Zg5vqgWpeCJPLT.jpg" alt="Porsche 917K Gulf Le Mans">
+</div>
+
+<!-- SLIDE 2 -->
+<div class="slide" id="slide2">
+<div class="barra">
+<a href="#slide1" class="boton">Primera</a>
+<a href="#slide1" class="boton">Anterior</a>
+<a href="#slide3" class="boton">Siguiente</a>
+<a href="#slide10" class="boton">Última</a>
+</div>
+<img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/12/20/dc/d4/les-24h-du-mans.jpg?w=1200&h=1200&s=1" alt="Porsche 917K en carrera Le Mans">
+</div>
+
+<!-- SLIDE 3 -->
+<div class="slide" id="slide3">
+<div class="barra">
+<a href="#slide1" class="boton">Primera</a>
+<a href="#slide2" class="boton">Anterior</a>
+<a href="#slide4" class="boton">Siguiente</a>
+<a href="#slide10" class="boton">Última</a>
+</div>
+<img src="https://www.rollingstone.com/wp-content/uploads/2025/06/GettyImages-2219934228.jpg?w=1581&h=1054&crop=1" alt="Porsche 917 LH Le Mans">
+</div>
+
+<!-- SLIDE 4 -->
+<div class="slide" id="slide4">
+<div class="barra">
+<a href="#slide1" class="boton">Primera</a>
+<a href="#slide3" class="boton">Anterior</a>
+<a href="#slide5" class="boton">Siguiente</a>
+<a href="#slide10" class="boton">Última</a>
+</div>
+<img src="https://mediapool.bmwgroup.com/cache/P9/202506/P90604468/P90604468-le-mans-fra-10-15-june-2025-24-hours-of-le-mans-fia-world-endurance-championship-fia-wec-team-wrt-46-600px.jpg" alt="Porsche 917 Pink Pig Le Mans">
+</div>
+
+<!-- SLIDE 5 -->
+<div class="slide" id="slide5">
+<div class="barra">
+<a href="#slide1" class="boton">Primera</a>
+<a href="#slide4" class="boton">Anterior</a>
+<a href="#slide6" class="boton">Siguiente</a>
+<a href="#slide10" class="boton">Última</a>
+</div>
+<img src="https://peugeot-sport.com/wp-content/uploads/2025/11/dppiproduction-00003964-0131-1920x1280.jpeg" alt="Porsche 919 Hybrid Le Mans">
+</div>
+
+<!-- SLIDE 6 -->
+<div class="slide" id="slide6">
+<div class="barra">
+<a href="#slide1" class="boton">Primera</a>
+<a href="#slide5" class="boton">Anterior</a>
+<a href="#slide7" class="boton">Siguiente</a>
+<a href="#slide10" class="boton">Última</a>
+</div>
+<img src="https://cdn.myportfolio.com/9851553c-e455-4926-9dd1-960b62a2d34a/d39c71a9-54b8-4155-b304-d55c6f1cb41d_rw_1920.jpg?h=2f0794d6c8a2a8b7f282a536c9373bd7" alt="Porsche 962C Grupo C">
+</div>
+
+<!-- SLIDE 7 -->
+<div class="slide" id="slide7">
+<div class="barra">
+<a href="#slide1" class="boton">Primera</a>
+<a href="#slide6" class="boton">Anterior</a>
+<a href="#slide8" class="boton">Siguiente</a>
+<a href="#slide10" class="boton">Última</a>
+</div>
+<img src="https://preview.redd.it/le-mans-wallpaper-v0-2rdw48z2hd9d1.jpeg?width=4800&format=pjpg&auto=webp&s=cb2c73b95d7d65e994214741b78778df599916fe" alt="Porsche 956 Grupo C">
+</div>
+
+<!-- SLIDE 8 -->
+<div class="slide" id="slide8">
+<div class="barra">
+<a href="#slide1" class="boton">Primera</a>
+<a href="#slide7" class="boton">Anterior</a>
+<a href="#slide9" class="boton">Siguiente</a>
+<a href="#slide10" class="boton">Última</a>
+</div>
+<img src="https://retroracing.es/wp-content/uploads/2025/07/le-mans-classic-2025-retroracinges-peter-auto-7.jpg" alt="Porsche RS Spyder prototipo">
+</div>
+
+<!-- SLIDE 9 -->
+<div class="slide" id="slide9">
+<div class="barra">
+<a href="#slide1" class="boton">Primera</a>
+<a href="#slide8" class="boton">Anterior</a>
+<a href="#slide10" class="boton">Siguiente</a>
+<a href="#slide10" class="boton">Última</a>
+</div>
+<img src="https://www.proton-competition.com/wp-content/uploads/2025/09/2025-09-14_Proton_01-3840x2560.jpg" alt="Porsche 963 Hypercar Le Mans">
+</div>
+
+<!-- SLIDE 10 -->
+<div class="slide" id="slide10">
+<div class="barra">
+<a href="#slide1" class="boton">Primera</a>
+<a href="#slide9" class="boton">Anterior</a>
+<a href="#slide10" class="boton">Siguiente</a>
+<a href="#slide10" class="boton">Última</a>
+</div>
+<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh3cg3XrHQ6gdlbBD0WWQn0fLNb9tWiDzG7lMIgHXmOnIp3i6PHKOdeUUvN82KRZA3gTtnjBX8gIs-zsHOyu5SZaOBqtq7NDFlsu-tbIyC8673_sqvHKqlSmgmrYMNfBW_Jr8Mnenj5E3Y/s1600/1971-Porsche_917_PinkPig.jpg" alt="Porsche 917 Salzburg ganador Le Mans 1970">
+</div>
+
+</div>
+
+</body>
+</html>
