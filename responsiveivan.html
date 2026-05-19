@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Metadatos -->
+  <meta name="author" content="Iván">
+  <meta name="description" content="Reflexión sobre diseño responsive, clip-path, columns e imágenes adaptativas en CSS.">
+  <meta name="keywords" content="HTML, CSS, responsive images, columns, clip-path, diseño web">
+
+  <title>Iván - Diseño Responsive</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+      background:#111827;
+      color:#f3f4f6;
+      line-height:1.7;
+    }
+
+    .container{
+      width:90%;
+      max-width:1100px;
+      margin:auto;
+      padding:40px 0;
+    }
+
+    h1{
+      text-align:center;
+      font-size:3rem;
+      color:#60a5fa;
+      margin-bottom:10px;
+    }
+
+    .subtitle{
+      text-align:center;
+      color:#cbd5e1;
+      margin-bottom:50px;
+    }
+
+    .card{
+      background:#1f2937;
+      padding:30px;
+      border-radius:20px;
+      margin-bottom:40px;
+      box-shadow:0 0 20px rgba(0,0,0,0.3);
+    }
+
+    .card h2{
+      color:#93c5fd;
+      margin-bottom:20px;
+    }
+
+    .card p{
+      margin-bottom:20px;
+      text-align:justify;
+    }
+
+    /* =========================
+       APARTADO DE IMÁGENES
+    ========================== */
+
+    .image-section{
+      padding:60px 0;
+      background:#0f172a;
+    }
+
+    .image-section h2{
+      text-align:center;
+      margin-bottom:40px;
+      font-size:2rem;
+      color:#93c5fd;
+    }
+
+    /* columns */
+    .gallery{
+      columns:3 250px;
+      column-gap:20px;
+      width:90%;
+      max-width:1200px;
+      margin:auto;
+    }
+
+    .gallery img{
+      width:100%;
+      margin-bottom:20px;
+      display:block;
+
+      /* responsive image */
+      object-fit:cover;
+
+      /* clip-path creativo */
+      clip-path: polygon(
+        0 0,
+        100% 0,
+        90% 100%,
+        10% 100%
+      );
+
+      border-radius:20px;
+
+      transition:0.4s;
+    }
+
+    .gallery img:hover{
+      transform:scale(1.03);
+      filter:brightness(1.1);
+    }
+
+    /* Responsive */
+
+    @media(max-width:768px){
+
+      h1{
+        font-size:2.2rem;
+      }
+
+      .card{
+        padding:20px;
+      }
+
+      .gallery{
+        columns:1;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1>Iván</h1>
+
+    <p class="subtitle">
+      Reflexión sobre diseño responsive y creatividad visual con CSS
+    </p>
+
+    <!-- PRIMER VÍDEO -->
+    <section class="card">
+
+      <h2>Primer vídeo</h2>
+
+      <p>
+        Del primer vídeo el tip que más siento que utilizaría sería el apartado de imágenes responsive, ya que siento que una app web bien diseñada debe tener todos sus elementos bien organizados y que todo siga una simetría. La primera impresión al ver una app web va a ser positiva o negativa según cómo esté organizada, ya que si hay colores que no combinan, elementos desordenados o todo hecho un caos siempre va a tirar para atrás.
+      </p>
+
+      <p>
+        Algo que valoro más que el resto de tips de ese primer vídeo es que, sí, es verdad que también están el relative padding o el responsive font size, pero creo que lo elijo porque siempre me ha llamado la atención la fotografía y el diseño gráfico, y poder trabajar con relación de aspectos y el ajuste de la imagen directamente desde CSS me resulta cómodo.
+      </p>
+
+    </section>
+
+    <!-- SEGUNDO VÍDEO -->
+    <section class="card">
+
+      <h2>Segundo vídeo</h2>
+
+      <p>
+        Por otra parte, en el otro vídeo siento que hay dos tips que usaría mucho, enlazándose con el tip anterior, y son el de columns y el de clip-path, porque combinando el responsive images con estos dos, se pueden hacer muchas cosas creativas, como columnas de imágenes donde solo se vea a través de una figura geométrica o similar.
+      </p>
+
+    </section>
+
+  </div>
+
+  <!-- APARTADO DE IMÁGENES FUERA DEL DIV -->
+  <section class="image-section">
+
+    <h2>Galería Responsive</h2>
+
+    <div class="gallery">
+
+      <img 
+        src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop"
+        alt="Programación"
+      >
+
+      <img 
+        src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop"
+        alt="Diseño responsive"
+      >
+
+      <img 
+        src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop"
+        alt="Fotografía"
+      >
+
+      <img 
+        src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop"
+        alt="Trabajo creativo"
+      >
+
+      <img 
+        src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop"
+        alt="Código"
+      >
+
+      <img 
+        src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=1200&auto=format&fit=crop"
+        alt="Diseño web"
+      >
+
+    </div>
+
+  </section>
+
+</body>
+</html>
